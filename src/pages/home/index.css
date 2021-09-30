@@ -25,6 +25,7 @@
   /* background: aliceblue; */
 }
 .home > .main .sidebar > a {
+  color: #444;
   height: 40px;
   line-height: 40px;
   padding-left: 10px;
@@ -32,7 +33,7 @@
 }
 .home > .main .sidebar > a:hover {
   background-color: #ccc;
-  color: blue;
+  color: #409eff;
 }
 
 /* 主内容 */
