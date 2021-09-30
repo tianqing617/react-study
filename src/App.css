@@ -1,6 +1,14 @@
 /* 样式初始化 */
+body, ul, li {
+  padding: 0;
+  margin: 0;
+}
 a {
+  color: #444;
   text-decoration: none;
+}
+ul, li {
+  list-style: none;
 }
 
 .app {

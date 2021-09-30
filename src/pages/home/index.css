@@ -6,10 +6,7 @@
   /* text-align: center; */
   margin: auto;
 }
-.home > .header {
-  height: 80px;
-  background: bisque;
-}
+
 .home > .main {
   flex: 1;
   display: flex;
@@ -25,7 +22,6 @@
   /* background: aliceblue; */
 }
 .home > .main .sidebar > a {
-  color: #444;
   height: 40px;
   line-height: 40px;
   padding-left: 10px;

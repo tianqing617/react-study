@@ -1,0 +1,26 @@
+.header {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+}
+.header > .logo {
+  width: 140px;
+  border-right: 1px solid #ccc;
+  text-align: center;
+}
+.header > .logo img {
+  height: 80px;
+  width: 100px;
+}
+.header > ul {
+  flex: 1;
+  display: flex;
+  padding-left: 10px;
+}
+.header > ul li {
+  margin-right: 10px;
+}
+.header > ul li:hover a {
+  color: #409eff;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
 import './index.css'
-
+import Header from './header'
 import Hello from '../demo/helloWorld'
 import TodoList from '../demo/todoList'
 
@@ -9,7 +9,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home">
-        <div className="header"></div>
+        <Header></Header>
         <div className="main">
           {/* 导航区 */}
           <div className="sidebar">
