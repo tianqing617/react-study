@@ -1,3 +1,8 @@
-.App {
-  text-align: center;
+/* 样式初始化 */
+a {
+  text-decoration: none;
+}
+
+.app {
+  /* text-align: center; */
 }

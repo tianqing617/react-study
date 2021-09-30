@@ -1,0 +1,44 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 980px;
+  /* text-align: center; */
+  margin: auto;
+}
+.home > .header {
+  height: 80px;
+  background: bisque;
+}
+.home > .main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+/* 导航条 */
+.home > .main .sidebar {
+  width: 140px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  /* background: aliceblue; */
+}
+.home > .main .sidebar > a {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.home > .main .sidebar > a:hover {
+  background-color: #ccc;
+  color: blue;
+}
+
+/* 主内容 */
+.home > .main .content {
+  flex: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* background: lightcoral; */
+}
