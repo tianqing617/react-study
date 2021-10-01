@@ -27,6 +27,7 @@
   padding-left: 10px;
   cursor: pointer;
 }
+.home > .main .sidebar > a.active,
 .home > .main .sidebar > a:hover {
   background-color: #ccc;
   color: #409eff;
