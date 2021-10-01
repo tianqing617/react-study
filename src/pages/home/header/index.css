@@ -8,6 +8,7 @@
   width: 140px;
   border-right: 1px solid #ccc;
   text-align: center;
+  cursor: pointer;
 }
 .header > .logo img {
   height: 80px;

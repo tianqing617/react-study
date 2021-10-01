@@ -6,7 +6,7 @@ export default class Header extends Component {
   render() {
     return (
       <div className="header">
-        <div className="logo">
+        <div className="logo" onClick={ this.gotoAddress }>
           <img src={ logo } className="App-logo" alt="logo" />
         </div>
 
@@ -29,5 +29,10 @@ export default class Header extends Component {
         </ul>
       </div>
     )
+  }
+
+  gotoAddress() {
+    // window.location.href = 'https://zh-hans.reactjs.org/docs/getting-started.html';
+    window.open('https://zh-hans.reactjs.org/docs/getting-started.html');
   }
 }
