@@ -2,6 +2,7 @@ import Hello from '../demo/helloWorld'
 import Weather from '../demo/weather'
 import TodoList from '../demo/todoList'
 import Person from '../demo/person'
+import AlertNum from '../demo/alertNum'
 
 const menu = [
   {
@@ -18,6 +19,11 @@ const menu = [
     name: "Person",
     path: "/demo/person",
     component: Person,
+  },
+  {
+    name: "AlertNum",
+    path: "/demo/alert-num",
+    component: AlertNum,
   },
   {
     name: "TodoList",

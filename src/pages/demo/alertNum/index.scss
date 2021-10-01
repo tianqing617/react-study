@@ -1,0 +1,12 @@
+.alert-num {
+  li {
+    margin-bottom: 10px;
+    > input {
+      margin-right: 10px;
+    }
+    .result {
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+}
