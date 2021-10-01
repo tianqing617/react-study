@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink, Route, Switch } from 'react-router-dom'
 import './index.css'
 import Header from './header'
 
@@ -22,9 +22,12 @@ export default class Home extends Component {
           
           {/* 主内容区 */}
           <div className="content">
-            <Route path="/demo/hello" component={ Hello }/>
-            <Route path="/demo/weather" component={ Weather }/>
-            <Route path="/demo/todolist" component={ TodoList }/>
+            {/* 注册路由 */}
+            <Switch>
+              <Route path="/demo/hello" component={ Hello }/>
+              <Route path="/demo/weather" component={ Weather }/>
+              <Route path="/demo/todolist" component={ TodoList }/>
+            </Switch>
           </div>
         </div>
       </div>
