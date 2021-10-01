@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './index.scss'
 
+// state 用法
 export default class Weather extends Component {
   // 初始化状态
   state = { isHot: false, wind: 'breeze' }
