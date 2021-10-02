@@ -4,6 +4,7 @@ import TodoList from '../demo/todoList'
 import Person from '../demo/person'
 import AlertNum from '../demo/alertNum'
 import ChangeCar from '../demo/changeCar'
+import Form from '../demo/form'
 
 const menu = [
   {
@@ -35,6 +36,12 @@ const menu = [
     name: "ChangeCar(lifecycle)",
     path: "/demo/change-car",
     component: ChangeCar,
+  },
+  {
+    id: 6,
+    name: "Form",
+    path: "/demo/form",
+    component: Form,
   },
   {
     id: 6,
