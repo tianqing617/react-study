@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Info from './info'
 
+// 生命周期
 export default class ChangeCar extends Component {
   state = { car: 'Audi' }
 
