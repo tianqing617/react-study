@@ -26,6 +26,8 @@
   line-height: 40px;
   padding-left: 10px;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .home > .main .sidebar > a.active,
 .home > .main .sidebar > a:hover {
