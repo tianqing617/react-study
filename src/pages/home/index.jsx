@@ -9,13 +9,13 @@ export default class Home extends Component {
     // 导航菜单
     const getNavLink = () => {
       return MenuData.map(item => {
-        return <NavLink key={ item.name } to={ item.path } title={ item.name }>{ item.name }</NavLink>
+        return <NavLink key={ item.id } to={ item.path } title={ item.name }>{ item.name }</NavLink>
       })
     }
     // 注册路由
     const getRouter = () => {
       return MenuData.map(item => {
-        return <Route key={ item.name } path={ item.path } component={ item.component }/>
+        return <Route key={ item.id } path={ item.path } component={ item.component }/>
       })
     }
 
