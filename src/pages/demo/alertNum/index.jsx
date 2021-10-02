@@ -24,6 +24,7 @@ export default class AlertNum extends Component {
 
   render() {
     return (
+      // 以下各DOM节点上的事件，React都会加到最外层的 ul 上，通过冒泡的方式触发。
       <ul className="alert-num">
         <li>
           {/* 方式一：已弃用 */}
