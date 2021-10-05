@@ -5,6 +5,7 @@ import Person from '../demo/person'
 import AlertNum from '../demo/alertNum'
 import ChangeCar from '../demo/changeCar'
 import Form from '../demo/form'
+import News from '../demo/news'
 
 const menu = [
   {
@@ -44,7 +45,13 @@ const menu = [
     component: Form,
   },
   {
-    id: 6,
+    id: 7,
+    name: "News(getSnapshotBeforeUpdate)",
+    path: "/demo/news",
+    component: News,
+  },
+  {
+    id: 8,
     name: "TodoList",
     path: "/demo/todolist",
     component: TodoList,
