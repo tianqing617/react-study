@@ -1,0 +1,17 @@
+.news {
+  height: 100px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  width: 230px;
+  li {
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    &:hover {
+      background-color: yellowgreen;
+    }
+  }
+  li.select {
+    background-color: yellowgreen;
+  }
+}
