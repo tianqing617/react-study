@@ -14,7 +14,7 @@ export default class ChangeCar extends Component {
   }
 
   // 使用static，会加入到对象的原型上，而非对象实例上。
-  static getDerivedStateFromProps(props,state){
+  static getDerivedStateFromProps(props,state) {
     console.log('getDerivedStateFromProps', props, state);
     return null
   }
