@@ -16,7 +16,7 @@ export default class News extends Component {
     console.log('componentDidMount')
     console.log(this.newsRef)
     // 挂载后即获取数据
-    this.setNewsList(this.state.num);
+    this.setNewsList(this.num);
 
     this.timer = setInterval(() => {
       this.num += 1;
@@ -42,7 +42,8 @@ export default class News extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.timer);
+    console.log('clear timer')
+    clearInterval(this.timer);
   }
 
   // 新闻数据集合
