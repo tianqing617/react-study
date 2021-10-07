@@ -16,7 +16,7 @@ export default class TodoList extends Component {
     this.setState({ content: event.target.value });
   }
 
-  addItem = () => {
+  addTodoItem = () => {
     const { todoList } = this.state;
     const id = new Date().getTime();
     const item = {
@@ -30,6 +30,22 @@ export default class TodoList extends Component {
       ...todoList,
     ]});
   }
+  delTodoItem = (id) => {
+    const list = this.state.todoList.filter(item => {
+      return item.id !== id;
+    });
+    this.setState({ todoList: list });
+  }
+  addDustItem = (item) => {
+    const { dustList } = this.state;
+
+    this.setState({
+      dustList: [
+        item,
+        ...dustList,
+      ]
+    })
+  }
 
   render() {
     return (
@@ -38,11 +54,14 @@ export default class TodoList extends Component {
           {/* header */}
           <div className="todo-header">
             <Input className="input" onChange={this.saveContent} placeholder="Please input the task" />
-            <Button type="primary" onClick={this.addItem}>Add</Button>
+            <Button type="primary" onClick={this.addTodoItem}>Add</Button>
           </div>
 
           {/* body */}
-          <ListShow dataList={this.state.todoList} />
+          <ListShow dataList={this.state.todoList}
+            handleAddDustList={this.addDustItem.bind(this)}
+            handleDelTodoList={this.delTodoItem.bind(this)}
+          />
         </div>
         <ul className="dust">
           <ListShow dataList={this.state.dustList}/>
