@@ -1,0 +1,30 @@
+.todolist {
+  display: flex;
+  width: 660px;
+  height: 560px;
+  outline: 1px solid #666;
+  .todo, .dust {
+    flex: 1;
+    padding: 10px 0px 10px 10px;
+    .show {
+      > li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .todo {
+    margin-right: 1px;
+    border-right: 1px solid #ccc;
+    .todo-header {
+      margin-bottom: 10px;
+    }
+  }
+  .dust {
+    margin-left: 1px;
+    border-left: 1px solid #ccc;
+  }
+
+  .input {
+    width: 280px;
+  }
+}

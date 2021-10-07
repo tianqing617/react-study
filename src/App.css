@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 /* 样式初始化 */
 body, ul, li {
   padding: 0;
@@ -10,7 +12,6 @@ a {
 ul, li {
   list-style: none;
 }
-
 .app {
   /* text-align: center; */
 }
