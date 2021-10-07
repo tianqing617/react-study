@@ -1,25 +1,18 @@
 import React, { Component } from 'react'
-import ListItem from './item'
+import { Radio, Input } from 'antd';
 
 export default class ShowList extends Component {
   render() {
-    const list = [{
-      id: 1,
-      content: '中国十一',
-      status: true,
-    }, {
-      id: 2,
-      content: '民国双十',
-      status: true,
-    }];
+    const { dataList } = this.props;
 
     return (
       <ul className="show">
         {
-          list.map(item => {
+          dataList.map(item => {
             return (
               <li key={item.id}>
-                <ListItem type="body" content={item.content} status={item.status} />
+                <Radio checked={item.status}></Radio>
+                <Input className="input" disabled value={item.content} />
               </li>
             )
           })

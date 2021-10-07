@@ -5,10 +5,14 @@
   outline: 1px solid #666;
   .todo, .dust {
     flex: 1;
-    padding: 10px 0px 10px 10px;
+    padding: 10px 14px 10px 10px;
+    overflow: auto;
     .show {
       > li {
         margin-bottom: 10px;
+      }
+      input {
+        width: 280px;
       }
     }
   }
@@ -17,14 +21,14 @@
     border-right: 1px solid #ccc;
     .todo-header {
       margin-bottom: 10px;
+      input {
+        width: 236px;
+        margin-right: 10px;
+      }
     }
   }
   .dust {
     margin-left: 1px;
     border-left: 1px solid #ccc;
-  }
-
-  .input {
-    width: 280px;
   }
 }
