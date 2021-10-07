@@ -12,14 +12,10 @@ export default class ShowList extends Component {
         // 向父组件传递
         this.props.handleDelTodoList(currentItem.id);
   
-        this.props.handleAddDustList(
-          Object.assign(currentItem, item)
-        );
+        this.props.handleAddDustList(item);
       } else {
         this.props.handleDelDustList(currentItem.id);
-        this.props.handleAddTodoList(
-          Object.assign(currentItem, item)
-        );
+        this.props.handleAddTodoList(item)();
       }
     }
   }

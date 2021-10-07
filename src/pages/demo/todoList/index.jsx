@@ -30,23 +30,26 @@ export default class TodoList extends Component {
     this.setState({ content: event.target.value });
   }
 
-  addTodoItem = () => {
-    const { todoList } = this.state;
-    const id = new Date().getTime();
-    const item = {
-      id,
-      content: this.state.content,
-      status: false, // false 未选中，true 已选中
-    };
-
-    const list = [ item, ...todoList ];
-    this.setState({ todoList: list });
-
-    // 清空输入框
-    this.setState({ content: '' });
-
-    // 数据持久化
-    saveToStorage('todolist', list);
+  addTodoItem = (item) => {
+    return (event) => {
+      console.log('addTodoItem', event, item)
+      const { todoList } = this.state;
+      // debugger
+      const perfectItem = item || {
+        id: new Date().getTime(),
+        content: this.state.content,
+        status: false, // false 未选中，true 已选中
+      }
+  
+      const list = [ perfectItem, ...todoList ];
+      this.setState({ todoList: list });
+  
+      // 清空输入框
+      this.setState({ content: '' });
+  
+      // 数据持久化
+      saveToStorage('todolist', list);
+    }
   }
   delTodoItem = (id) => {
     const list = this.state.todoList.filter(item => {
@@ -83,7 +86,7 @@ export default class TodoList extends Component {
           {/* header */}
           <div className="todo-header">
             <Input className="input" value={this.state.content} onChange={this.saveContent} placeholder="Please input the task" />
-            <Button type="primary" onClick={this.addTodoItem}>Add</Button>
+            <Button type="primary" onClick={this.addTodoItem()}>Add</Button>
           </div>
 
           {/* body */}
