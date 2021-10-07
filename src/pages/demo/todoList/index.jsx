@@ -36,6 +36,7 @@ export default class TodoList extends Component {
     });
     this.setState({ todoList: list });
   }
+
   addDustItem = (item) => {
     const { dustList } = this.state;
 
@@ -45,6 +46,13 @@ export default class TodoList extends Component {
         ...dustList,
       ]
     })
+  }
+  // TODO: 代码可以优化
+  delDustItem = (id) => {
+    const list = this.state.dustList.filter(item => {
+      return item.id !== id;
+    });
+    this.setState({ dustList: list });
   }
 
   render() {
@@ -64,7 +72,10 @@ export default class TodoList extends Component {
           />
         </div>
         <ul className="dust">
-          <ListShow dataList={this.state.dustList}/>
+          <ListShow dataList={this.state.dustList}
+            handleAddTodoList={this.addTodoItem.bind(this)}
+            handleDelDustList={this.delDustItem.bind(this)}
+          />
         </ul>
       </div>
     )

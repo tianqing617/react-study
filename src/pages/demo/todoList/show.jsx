@@ -1,15 +1,26 @@
 import React, { Component } from 'react'
-import { Radio, Input } from 'antd';
+import { Checkbox, Input } from 'antd';
 
 export default class ShowList extends Component {
   saveDustList = (currentItem) => {
-    return () => {
-      // 向父组件传递
-      this.props.handleDelTodoList(currentItem.id);
+    return (event) => {
+      console.log(event, currentItem);
+      const checked = event.target.checked;
+      const item = Object.assign(currentItem, { status: checked });
 
-      this.props.handleAddDustList(
-        Object.assign(currentItem, { status: true })
-      );
+      if (checked) {
+        // 向父组件传递
+        this.props.handleDelTodoList(currentItem.id);
+  
+        this.props.handleAddDustList(
+          Object.assign(currentItem, item)
+        );
+      } else {
+        this.props.handleDelDustList(currentItem.id);
+        this.props.handleAddTodoList(
+          Object.assign(currentItem, item)
+        );
+      }
     }
   }
 
@@ -22,7 +33,7 @@ export default class ShowList extends Component {
           dataList.map(item => {
             return (
               <li key={item.id}>
-                <Radio checked={item.status} onChange={this.saveDustList(item)}></Radio>
+                <Checkbox checked={item.status} onChange={this.saveDustList(item)}></Checkbox>
                 <Input className="input" disabled value={item.content} />
               </li>
             )
