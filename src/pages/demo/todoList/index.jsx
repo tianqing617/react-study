@@ -42,6 +42,9 @@ export default class TodoList extends Component {
     const list = [ item, ...todoList ];
     this.setState({ todoList: list });
 
+    // 清空输入框
+    this.setState({ content: '' });
+
     // 数据持久化
     saveToStorage('todolist', list);
   }
@@ -79,7 +82,7 @@ export default class TodoList extends Component {
         <div className="todo">
           {/* header */}
           <div className="todo-header">
-            <Input className="input" onChange={this.saveContent} placeholder="Please input the task" />
+            <Input className="input" value={this.state.content} onChange={this.saveContent} placeholder="Please input the task" />
             <Button type="primary" onClick={this.addTodoItem}>Add</Button>
           </div>
 
