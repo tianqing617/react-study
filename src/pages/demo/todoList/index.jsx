@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Input, Button } from 'antd';
 import ListShow from './show'
+import { saveToStorage, getFromStorage } from './utils'
 import './index.scss'
 
 export default class TodoList extends Component {
@@ -11,6 +12,19 @@ export default class TodoList extends Component {
     dustList: [],
   }
   content = '';
+
+  componentDidMount() {
+    const todoList = getFromStorage('todolist');
+    const dustList = getFromStorage('dustlist');
+    console.log(todoList, dustList);
+    
+    if (todoList) {
+      this.setState({ todoList });
+    }
+    if (dustList) {
+      this.setState({ dustList });
+    }
+  }
 
   saveContent = (event) => {
     this.setState({ content: event.target.value });
@@ -25,27 +39,29 @@ export default class TodoList extends Component {
       status: false, // false 未选中，true 已选中
     };
 
-    this.setState({ todoList: [
-      item,
-      ...todoList,
-    ]});
+    const list = [ item, ...todoList ];
+    this.setState({ todoList: list });
+
+    // 数据持久化
+    saveToStorage('todolist', list);
   }
   delTodoItem = (id) => {
     const list = this.state.todoList.filter(item => {
       return item.id !== id;
     });
     this.setState({ todoList: list });
+
+    saveToStorage('todolist', list);
   }
 
+  // TODO: 代码需要优化
   addDustItem = (item) => {
     const { dustList } = this.state;
 
-    this.setState({
-      dustList: [
-        item,
-        ...dustList,
-      ]
-    })
+    const list = [ item, ...dustList ];
+    this.setState({ dustList: list });
+
+    saveToStorage('dustlist', list);
   }
   // TODO: 代码可以优化
   delDustItem = (id) => {
@@ -53,6 +69,8 @@ export default class TodoList extends Component {
       return item.id !== id;
     });
     this.setState({ dustList: list });
+
+    saveToStorage('dustlist', list);
   }
 
   render() {
