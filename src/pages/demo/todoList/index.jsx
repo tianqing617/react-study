@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Input, Button } from 'antd';
 import ListShow from './show'
 import { saveToStorage, getFromStorage } from './utils'
+import TypeEnum from './enum'
 import './index.scss'
 
 export default class TodoList extends Component {
@@ -14,8 +15,8 @@ export default class TodoList extends Component {
   content = '';
 
   componentDidMount() {
-    const todoList = getFromStorage('todolist');
-    const dustList = getFromStorage('dustlist');
+    const todoList = getFromStorage(TypeEnum.todoList);
+    const dustList = getFromStorage(TypeEnum.dustList);
     console.log(todoList, dustList);
     
     if (todoList) {
@@ -31,33 +32,31 @@ export default class TodoList extends Component {
   }
 
   addTodoItem = (item) => {
-    return (event) => {
-      console.log('addTodoItem', event, item)
-      const { todoList } = this.state;
-      // debugger
-      const perfectItem = item || {
-        id: new Date().getTime(),
-        content: this.state.content,
-        status: false, // false 未选中，true 已选中
-      }
-  
-      const list = [ perfectItem, ...todoList ];
-      this.setState({ todoList: list });
-  
-      // 清空输入框
-      this.setState({ content: '' });
-  
-      // 数据持久化
-      saveToStorage('todolist', list);
+    console.log('addTodoItem', item);
+    const { todoList } = this.state;
+    // debugger
+    const perfectItem = item || {
+      id: new Date().getTime(),
+      content: this.state.content,
+      status: false, // false 未选中，true 已选中
     }
-  }
-  delTodoItem = (id) => {
-    const list = this.state.todoList.filter(item => {
-      return item.id !== id;
-    });
+
+    const list = [ perfectItem, ...todoList ];
     this.setState({ todoList: list });
 
-    saveToStorage('todolist', list);
+    // 清空输入框
+    this.setState({ content: '' });
+
+    // 数据持久化
+    saveToStorage(TypeEnum.todoList, list);
+  }
+  delItem = (type, id) => {
+    const list = this.state[type].filter(item => {
+      return item.id !== id;
+    });
+    this.setState({ [type]: list });
+
+    saveToStorage(type, list);
   }
 
   // TODO: 代码需要优化
@@ -67,16 +66,7 @@ export default class TodoList extends Component {
     const list = [ item, ...dustList ];
     this.setState({ dustList: list });
 
-    saveToStorage('dustlist', list);
-  }
-  // TODO: 代码可以优化
-  delDustItem = (id) => {
-    const list = this.state.dustList.filter(item => {
-      return item.id !== id;
-    });
-    this.setState({ dustList: list });
-
-    saveToStorage('dustlist', list);
+    saveToStorage(TypeEnum.dustList, list);
   }
 
   render() {
@@ -86,19 +76,19 @@ export default class TodoList extends Component {
           {/* header */}
           <div className="todo-header">
             <Input className="input" value={this.state.content} onChange={this.saveContent} placeholder="Please input the task" />
-            <Button type="primary" onClick={this.addTodoItem()}>Add</Button>
+            <Button type="primary" onClick={() => this.addTodoItem()}>Add</Button>
           </div>
 
           {/* body */}
           <ListShow dataList={this.state.todoList}
             handleAddDustList={this.addDustItem.bind(this)}
-            handleDelTodoList={this.delTodoItem.bind(this)}
+            handleDelList={this.delItem.bind(this)}
           />
         </div>
         <ul className="dust">
           <ListShow dataList={this.state.dustList}
             handleAddTodoList={this.addTodoItem.bind(this)}
-            handleDelDustList={this.delDustItem.bind(this)}
+            handleDelList={this.delItem.bind(this)}
           />
         </ul>
       </div>
