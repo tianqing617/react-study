@@ -13,8 +13,9 @@ export default class Counter extends Component {
 
   increment = () => {
 		store.dispatch(createIncrementAction(this.state.num));
-    store.
+    // store.
 	}
+
   decrement = () => {
 		store.dispatch(createDecrementAction(this.state.num));
 	}
