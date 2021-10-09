@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { InputNumber, Button } from 'antd'
+import store from './redux/store'
 import './index.scss'
 
 export default class Counter extends Component {
@@ -13,7 +14,7 @@ export default class Counter extends Component {
     return (
       <div className="counter">
         <div className="handler">
-          <InputNumber className="input-number" min={1} max={10} defaultValue={this.state.num} onChange={this.saveNum} />
+          <InputNumber className="input-number" min={1} max={10} defaultValue={store.getState()} onChange={this.saveNum} />
           <Button shape="circle" >+</Button>
           <Button shape="circle" >-</Button>
           <Button type="primary">奇数才加</Button>
