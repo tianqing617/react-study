@@ -6,6 +6,7 @@ import AlertNum from '../demo/alertNum'
 import ChangeCar from '../demo/changeCar'
 import Form from '../demo/form'
 import News from '../demo/news'
+import Counter from '../demo/counter'
 
 const menu = [
   {
@@ -55,7 +56,13 @@ const menu = [
     name: "TodoList",
     path: "/demo/todolist",
     component: TodoList,
-  }
+  },
+  {
+    id: 9,
+    name: "Counter(redux)",
+    path: "/demo/counter",
+    component: Counter,
+  },
 ]
 
 export default menu;
