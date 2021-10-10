@@ -7,6 +7,7 @@ import ChangeCar from '../demo/changeCar'
 import Form from '../demo/form'
 import News from '../demo/news'
 import Counter from '../demo/counter'
+import Counter2 from '../demo/counter2'
 
 const menu = [
   {
@@ -62,6 +63,12 @@ const menu = [
     name: "Counter(redux)",
     path: "/demo/counter",
     component: Counter,
+  },
+  {
+    id: 10,
+    name: "Counter2(react-redux)",
+    path: "/demo/counter2",
+    component: Counter2,
   },
 ]
 
