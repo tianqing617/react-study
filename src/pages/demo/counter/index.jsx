@@ -20,13 +20,18 @@ export default class Counter extends Component {
 		store.dispatch(createDecrementAction(this.state.num));
 	}
 
+  componentDidMount() {
+    store.subscribe(() => {
+      this.setState({});
+    });
+  }
   render() {
     return (
       <div className="counter">
         <div className="handler">
           <InputNumber className="input-number" min={1} max={10} defaultValue={store.getState()} onChange={this.saveNum} />
           <Button shape="circle" onClick={this.increment}>+</Button>
-          <Button shape="circle" >-</Button>
+          <Button shape="circle"  onClick={this.decrement}>-</Button>
           <Button type="primary">奇数才加</Button>
           <Button type="primary">异步加</Button>
         </div>
