@@ -8,6 +8,7 @@ import Form from '../demo/form'
 import News from '../demo/news'
 import Counter from '../demo/counter'
 import Counter2 from '../demo/counter2'
+import Counter3 from '../demo/counter3'
 
 const menu = [
   {
@@ -61,14 +62,20 @@ const menu = [
   {
     id: 9,
     name: "Counter(redux)",
-    path: "/demo/counter",
+    path: "/demo/counter/redux",
     component: Counter,
   },
   {
     id: 10,
-    name: "Counter2(react-redux)",
-    path: "/demo/counter2",
+    name: "Counter2(react-redux basic)",
+    path: "/demo/counter2/react-redux/basic",
     component: Counter2,
+  },
+  {
+    id: 11,
+    name: "Counter3(react-redux profession)",
+    path: "/demo/counter3/react-redux/profession",
+    component: Counter3,
   },
 ]
 
