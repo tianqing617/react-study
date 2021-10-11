@@ -6,7 +6,8 @@ import Container from './container'
 export default class Counter2 extends Component {
   render() {
     return (
-      <div>
+      <div className="counter2">
+        <h3>react-redux 基础使用示例</h3>
         {/* 给容器组件传递 store */}
         <Container store={store} />
       </div>

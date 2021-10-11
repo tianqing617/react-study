@@ -40,16 +40,19 @@ export default class Counter extends Component {
   render() {
     return (
       <div className="counter">
-        <div className="handler">
-          <InputNumber className="input-number" min={1} max={10} defaultValue={store.getState()} onChange={this.saveNum} />
-          <Button shape="circle" onClick={this.increment}>+</Button>
-          <Button shape="circle"  onClick={this.decrement}>-</Button>
-          <Button type="primary" onClick={this.incrementIfOdd}>奇数才加</Button>
-          <Button type="primary" onClick={this.incrementAsync}>异步加</Button>
-        </div>
-        <div className="result">
-          <span> = </span>
-          <span className="num">{store.getState()}</span>
+        <h3>redux 使用示例</h3>
+        <div className="main">
+          <div className="handler">
+            <InputNumber className="input-number" min={1} max={10} defaultValue={store.getState()} onChange={this.saveNum} />
+            <Button shape="circle" onClick={this.increment}>+</Button>
+            <Button shape="circle"  onClick={this.decrement}>-</Button>
+            <Button type="primary" onClick={this.incrementIfOdd}>奇数才加</Button>
+            <Button type="primary" onClick={this.incrementAsync}>异步加</Button>
+          </div>
+          <div className="result">
+            <span> = </span>
+            <span className="num">{store.getState()}</span>
+          </div>
         </div>
       </div>
     )

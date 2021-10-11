@@ -33,7 +33,7 @@ export default class Counter extends Component {
 
   render() {
     return (
-      <div className="counter">
+      <div className="counter-component">
         <div className="handler">
           <InputNumber className="input-number" min={1} max={10} defaultValue={this.state.num} onChange={this.saveNum} />
           <Button shape="circle" onClick={this.increment}>+</Button>
