@@ -1,8 +1,9 @@
-import { INCREMENT, DECREMENT } from './constant'
+import { INCREMENT, DECREMENT } from '../constant'
 
 // 初始化状态
 const initState = 3
-export default function countReducer(preState = initState, action) {
+
+export default function counterReducer(preState = initState, action) {
   console.log('store', preState, action);
 	const { type, data } = action;
 

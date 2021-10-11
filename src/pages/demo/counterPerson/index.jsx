@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import store from './reactRedux/store'
+import store from './redux/store'
 import Container from './container'
 
 // react-redux 生产环境用法

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Counter3 from './counter3'
-import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from './reactRedux/counterAction'
+import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from './redux/action'
 
 function mapStateToProps(state) {
   return { sum: state };
