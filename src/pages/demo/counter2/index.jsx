@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import store from './reactRedux/store'
 import Container from './container'
 
+// react-redux 使用示例
 export default class Counter2 extends Component {
   render() {
     return (

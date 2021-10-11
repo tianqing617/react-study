@@ -4,6 +4,7 @@ import { createIncrementAction, createDecrementAction, createIncrementAsyncActio
 import store from './redux/store'
 import './index.scss'
 
+// redux 使用示例
 export default class Counter extends Component {
   state = { num: 3 };
 
