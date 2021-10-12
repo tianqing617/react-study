@@ -5,7 +5,7 @@ import { InputNumber, Button } from 'antd'
 import './index.scss'
 
 export default class Counter extends Component {
-  state = { num: 3 };
+  state = { num: 1 };
 
   saveNum = (value) => {
     this.setState({ num: value });
@@ -21,6 +21,10 @@ export default class Counter extends Component {
   
   incrementIfOdd = () => {
     // this.props.incrementAsync(this.state.num, 1000);
+    const sum = this.props.sum;
+		if(sum % 2 !== 0){
+			 this.props.increment(this.state.num);
+		}
 	}
 
   incrementAsync = () => {
