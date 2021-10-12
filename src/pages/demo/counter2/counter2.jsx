@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { InputNumber, Button } from 'antd'
 // import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from './reactRedux/counterAction'
 // import store from './reactRedux/store'
-import './index.scss'
 
 export default class Counter extends Component {
   state = { num: 1 };

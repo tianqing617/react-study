@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import store from './reactRedux/store'
 import Container from './container'
+import './index.scss'
 
 // react-redux 基础使用示例
 export default class Counter2 extends Component {

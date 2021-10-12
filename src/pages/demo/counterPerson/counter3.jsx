@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { InputNumber, Button } from 'antd'
-// import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from './reactRedux/counterAction'
-// import store from './reactRedux/store'
-import './index.scss'
+import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from './redux/action'
 
-export default class Counter extends Component {
+class Counter3 extends Component {
   state = { num: 1 };
 
   saveNum = (value) => {
@@ -27,7 +26,7 @@ export default class Counter extends Component {
 	}
 
   incrementAsync = () => {
-    this.props.incrementAsync(this.state.num, 1000);
+    this.props.incrementAsync(this.state.num, 600);
 	}
 
   componentDidMount() {
@@ -53,3 +52,13 @@ export default class Counter extends Component {
     )
   }
 }
+
+// 简写形式，详细写法见：counter2组件
+export default connect(
+  state => ({ sum: state }),
+  {
+    increment: createIncrementAction,
+    decrement: createDecrementAction,
+    incrementAsync: createIncrementAsyncAction
+  }
+)(Counter3);
