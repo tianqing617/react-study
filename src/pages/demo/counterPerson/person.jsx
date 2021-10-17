@@ -39,6 +39,7 @@ class Person extends Component {
 	render() {
 		return (
 			<div className="person">
+        <h3>Counter组件: {this.props.count}</h3>
         <div className="add-person">
           <Input onChange={this.saveForm('name')} value={this.state.name} placeholder="输入名字" />
           <Input onChange={this.saveForm('age')} value={this.state.age} placeholder="输入年龄" />

@@ -3,26 +3,34 @@
     margin-bottom: 20px;
   }
   .counter3 {
-    display: flex;
-    .handler {
-      .input-number {
-        margin-right: 10px;
-      }
-      > button {
-        margin-right: 10px;
-      }
+    > h3 {
+      color: #9E3BBB;
     }
-    .result {
-      margin-left: 30px;
-      font-size: 24px;
-      .num {
-        font-weight: 500;
+    .main {
+      display: flex;
+      .handler {
+        .input-number {
+          margin-right: 10px;
+        }
+        > button {
+          margin-right: 10px;
+        }
+      }
+      .result {
+        margin-left: 30px;
+        font-size: 24px;
+        .num {
+          font-weight: 500;
+        }
       }
     }
   }  
 }
 
 .person {
+  > h3 {
+    color: #9E3BBB;
+  }
   .add-person {
     display: flex;
     > input {

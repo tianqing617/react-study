@@ -36,17 +36,21 @@ class Counter extends Component {
   render() {
     return (
       <div className="counter3">
-        <div className="handler">
-          <InputNumber className="input-number" min={1} max={10} defaultValue={this.state.num} onChange={this.saveNum} />
-          <Button shape="circle" onClick={this.increment}>+</Button>
-          <Button shape="circle"  onClick={this.decrement}>-</Button>
-          <Button type="primary" onClick={this.incrementIfOdd}>奇数才加</Button>
-          <Button type="primary" onClick={this.incrementAsync}>异步加</Button>
-        </div>
+        <h3>Person组件：{this.props.personList.length}</h3>
 
-        <div className="result">
-          <span> = </span>
-          <span className="num">{this.props.sum}</span>
+        <div className="main">
+          <div className="handler">
+            <InputNumber className="input-number" min={1} max={10} defaultValue={this.state.num} onChange={this.saveNum} />
+            <Button shape="circle" onClick={this.increment}>+</Button>
+            <Button shape="circle"  onClick={this.decrement}>-</Button>
+            <Button type="primary" onClick={this.incrementIfOdd}>奇数才加</Button>
+            <Button type="primary" onClick={this.incrementAsync}>异步加</Button>
+          </div>
+
+          <div className="result">
+            <span> = </span>
+            <span className="num">{this.props.sum}</span>
+          </div>
         </div>
       </div>
     )
@@ -55,7 +59,7 @@ class Counter extends Component {
 
 // 简写形式，详细写法见：counter2组件
 export default connect(
-  state => ({ sum: state.counter }),
+  state => ({ sum: state.counter, personList: state.person }),
   {
     increment: createIncrementAction,
     decrement: createDecrementAction,
