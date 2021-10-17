@@ -1,26 +1,47 @@
 import React, { Component } from 'react'
 import { Input, Button, List } from 'antd'
-// import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid'
 import { connect } from 'react-redux'
 import { createAddPersonAction } from './redux/action'
 
 class Person extends Component {
+  state = {
+    name: '',
+    age: '',
+  }
+  saveForm = (type, value) => {
+    this.setState({
+      [type]: value
+    })
+  }
+  saveForm = type => {
+    return event => {
+      this.setState({ [type]: event.target.value });
+    }
+  }
 
 	addPerson = ()=>{
-		// const name = this.nameNode.value
-		// const age = this.ageNode.value*1
-		// const personObj = {id:nanoid(),name,age}
-		// this.props.addPerson(personObj)
-		// this.nameNode.value = ''
-		// this.ageNode.value = ''
+    const { name, age } = this.state;
+		const person = {
+      id:nanoid(),
+      name,
+      age
+    };
+
+		this.props.createAddPersonAction(person);
+
+    this.setState({
+      name: '',
+      age: '',
+    });
 	}
 
 	render() {
 		return (
 			<div className="person">
         <div className="add-person">
-          <Input placeholder="输入名字" />
-          <Input placeholder="输入年龄" />
+          <Input onChange={this.saveForm('name')} value={this.state.name} placeholder="输入名字" />
+          <Input onChange={this.saveForm('age')} value={this.state.age} placeholder="输入年龄" />
           <Button onClick={this.addPerson}>添加</Button>
         </div>
 
