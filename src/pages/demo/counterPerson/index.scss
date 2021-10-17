@@ -21,3 +21,13 @@
     }
   }  
 }
+
+.person {
+  .add-person {
+    display: flex;
+    > input {
+      width: 230px;
+      margin-right: 10px;
+    }
+  }
+}
