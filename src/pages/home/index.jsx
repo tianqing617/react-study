@@ -1,9 +1,9 @@
 import React, { Component, Suspense } from 'react'
 import { NavLink, Route, Switch } from 'react-router-dom'
-import { Spin } from 'antd';
 import './index.css'
 import Header from './header'
 import MenuData from './menu'
+import { Loading } from '../../components'
 
 export default class Home extends Component {
   render() {
@@ -32,7 +32,7 @@ export default class Home extends Component {
           {/* 主内容区 */}
           <div className="content">
             {/* 路由懒加载 */}
-            <Suspense fallback={<Spin />}>
+            <Suspense fallback={<Loading />}>
               {/* 注册路由 */}
               <Switch>
                 {getRouter()}

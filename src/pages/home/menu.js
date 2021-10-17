@@ -67,6 +67,12 @@ const menu = [
     path: "/demo/counter/person/react-redux/",
     component: lazy(() => import('../demo/counterPerson')),
   },
+  {
+    id: 12,
+    name: "Loading",
+    path: "/demo/loading",
+    component: lazy(() => import('../demo/loadingShow')),
+  },
 ]
 
 export default menu;
