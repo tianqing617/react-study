@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense } from 'react'
 import { NavLink, Route, Switch } from 'react-router-dom'
+import { Spin } from 'antd';
 import './index.css'
 import Header from './header'
 import MenuData from './menu'
@@ -30,10 +31,13 @@ export default class Home extends Component {
           
           {/* 主内容区 */}
           <div className="content">
-            {/* 注册路由 */}
-            <Switch>
-              {getRouter()}
-            </Switch>
+            {/* 路由懒加载 */}
+            <Suspense fallback={<Spin />}>
+              {/* 注册路由 */}
+              <Switch>
+                {getRouter()}
+              </Switch>
+            </Suspense>
           </div>
         </div>
       </div>
