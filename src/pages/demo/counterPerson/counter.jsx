@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { InputNumber, Button } from 'antd'
 import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from './redux/action'
 
-class Counter3 extends Component {
+class Counter extends Component {
   state = { num: 1 };
 
   saveNum = (value) => {
@@ -55,10 +55,10 @@ class Counter3 extends Component {
 
 // 简写形式，详细写法见：counter2组件
 export default connect(
-  state => ({ sum: state }),
+  state => ({ sum: state.counter }),
   {
     increment: createIncrementAction,
     decrement: createDecrementAction,
     incrementAsync: createIncrementAsyncAction
   }
-)(Counter3);
+)(Counter);

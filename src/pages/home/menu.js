@@ -73,7 +73,7 @@ const menu = [
   },
   {
     id: 11,
-    name: "Counter3(react-redux profession)",
+    name: "CounterPerson(react-redux profession)",
     path: "/demo/counter/person/react-redux/",
     component: CounterPerson,
   },
