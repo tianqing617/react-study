@@ -1,0 +1,10 @@
+.func-demo {
+  display: flex;
+  > div {
+    width: 270px;
+    margin-right: 10px;
+  }
+  input {
+    margin-right: 10px;
+  }
+}
