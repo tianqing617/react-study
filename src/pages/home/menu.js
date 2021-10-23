@@ -71,7 +71,7 @@ const menu = [
     id: 13,
     name: "FuncDemo",
     path: "/demo/function",
-    component: lazy(() => import('../demo/funcDemo')),
+    component: lazy(() => import('../demo/func')),
   },
   {
     id: 12,
