@@ -1,0 +1,25 @@
+.render-props-parent {
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  background-color: yellowgreen;
+}
+
+.render-props-son {
+  width: 400px;
+  height: 220px;
+  margin: auto;
+  margin-top: 30px;
+  background-color: goldenrod;
+}
+
+.render-props-grand-son {
+  height: 120px;
+  width: 300px;
+  margin: auto;
+  margin-top: 10px;
+  background-color: hotpink;
+  i {
+    font-weight: 800;
+  }
+}

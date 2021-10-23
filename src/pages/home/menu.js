@@ -69,9 +69,15 @@ const menu = [
   },
   {
     id: 13,
-    name: "FuncDemo",
+    name: "Function",
     path: "/demo/function",
     component: lazy(() => import('../demo/func')),
+  },
+  {
+    id: 14,
+    name: "RenderProps(slots)",
+    path: "/demo/renderProps",
+    component: lazy(() => import('../demo/renderProps')),
   },
   {
     id: 12,
