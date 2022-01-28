@@ -68,6 +68,12 @@ const menu = [
     component: lazy(() => import('../demo/counterPerson')),
   },
   {
+    id: 12,
+    name: "Loading",
+    path: "/demo/loading",
+    component: lazy(() => import('../demo/loadingShow')),
+  },
+  {
     id: 13,
     name: "Function",
     path: "/demo/function",
@@ -80,10 +86,10 @@ const menu = [
     component: lazy(() => import('../demo/renderProps')),
   },
   {
-    id: 12,
-    name: "Loading",
-    path: "/demo/loading",
-    component: lazy(() => import('../demo/loadingShow')),
+    id: 15,
+    name: "Chat",
+    path: "/demo/chat",
+    component: lazy(() => import('../demo/chat')),
   },
 ]
 
