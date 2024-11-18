@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 项目初始化
+* 支持node版本为：v12.22.12
+* npm install
+* 项目地址：https://github.com/tianqing617/react-study
+
 ## Available Scripts
 
 In the project directory, you can run:
