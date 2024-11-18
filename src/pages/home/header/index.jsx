@@ -12,6 +12,8 @@ export default class Header extends Component {
 
         <ul>
           <li>
+            <a href="https://zh-hans.react.dev/learn" rel="noreferrer" target="_blank">React官网</a>
+            {/* 老地址，不再使用 */}
             <a href="https://zh-hans.reactjs.org/docs/getting-started.html" rel="noreferrer" target="_blank">React官网</a>
           </li>
           <li>
